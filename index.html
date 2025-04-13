@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteBot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NoteBot</h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="input">Enter your notes.</button>
+            <button class="tab-btn" data-tab="summary">Summarized notes.</button>
+        </div>
+
+        <div class="controls">
+            <div class="modes">
+                <span>Modes:</span>
+                <button class="mode-btn active" data-mode="paragraph">Paragraph</button>
+                <button class="mode-btn" data-mode="bullet">Bullet Points</button>
+                <button class="mode-btn" data-mode="custom">Custom</button>
+            </div>
+            <div class="summary-length">
+                <span>Summary Length:</span>
+                <span class="length-label">Short</span>
+                <input type="range" id="lengthSlider" min="0" max="100" value="30">
+                <span class="length-label">Long</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="tab-content active" id="input-tab">
+                <textarea id="input-notes" placeholder="Type or paste your notes here..."></textarea>
+                <div class="button-group">
+                    <button id="summarize-btn">Summarize →</button>
+                    <button id="download-btn">Download Summary</button>
+                </div>
+            </div>
+            <div class="tab-content" id="summary-tab">
+                <div id="summary-content"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html> 
